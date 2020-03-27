@@ -13,6 +13,6 @@ int main()
     scanf("%lf", &b);
     printf("Enter c: ");
     scanf("%lf", &c);
-    quad_e(a, b, c);
+    printf("%lf\n", quad_e(a, b, c));
     return myfunc(2);
 }
