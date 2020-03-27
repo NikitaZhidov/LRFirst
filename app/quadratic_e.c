@@ -14,8 +14,7 @@ double quad_e(double a, double b, double c){
     else if (a == 0){
         x2 = 0;
         x1 = (-1*c)/b;
-        printf("x = %lf\n", x1);
-        return x1+x2;
+        printf("x = %lf\n", x1);        return x1+x2;
     }
 
 
