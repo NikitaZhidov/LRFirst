@@ -6,7 +6,7 @@ before_install:
 
 addons:
   sonarcloud:
-    organization: "sonarcloud_organization_key" # the key of the org you chose at step #3
+    organization: "nikitazhidov" # the key of the org you chose at step #3
 
 script:
   - qmake
@@ -17,6 +17,13 @@ script:
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
   - sonar-scanner 
+   # Wraps the compilation with the Build Wrapper to generate configuration (used
+  # later by the SonarScanner) into the "bw-output" folder
+  - build-wrapper-linux-x86-64 --out-dir bw-output <your clean build command>
+  # And finally run the SonarCloud analysis - read the "sonar-project.properties"
+  # file to see the specific configuration
+  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 notifications:
   email: false
+
