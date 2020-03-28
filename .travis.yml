@@ -4,13 +4,19 @@ language:
 before_install:
   - pip install --user cpp-coveralls
 
+addons:
+  sonarcloud:
+    organization: "sonarcloud_organization_key" # the key of the org you chose at step #3
+
 script:
   - qmake
   - make
-  - ./tests/tests
+  - ./tests/tests 
+  
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
+  - sonar-scanner 
 
 notifications:
   email: false
