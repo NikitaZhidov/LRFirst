@@ -1,5 +1,3 @@
-dist: trusty
-
 language:
   - cpp
 
@@ -8,20 +6,21 @@ before_install:
 
 addons:
   sonarcloud:
-    organization: "nikitazhidov" # the key of the org you chose at step #3
+    organization: "nikitazhidov"
 
 script:
   - qmake
   - make
   - ./tests/tests
-  
+
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
-  #- build-wrapper-win-x86-64.exe --out-dir  build_wrapper_output_directory build-wrapper-win-x86-64 /t:Rebuildl
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner 
+  - sonar-scanner -Dsonar.verbose=true -X
 
+cache:
+ directories:
+ - '$HOME/.sonar/cache'
 
 notifications:
   email: "false"
-
