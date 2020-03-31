@@ -7,8 +7,7 @@ before_install:
 addons:
   sonarcloud:
     organization: "nikitazhidov" # the key of the org you chose at step #3
-  token:
-      secure: $SONAR_TOKEN
+
 
 script:
   - qmake
@@ -21,5 +20,5 @@ after_success:
   - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output 
  
 notifications:
-  email: false
+  email: "false"
 
