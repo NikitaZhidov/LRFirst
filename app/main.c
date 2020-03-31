@@ -13,6 +13,10 @@ int main()
     (void)scanf("%lf", &b);
     printf("Enter c: ");
     (void)scanf("%lf", &c);
-    quad_e(a, b, c);
+    double x1, x2;
+    int count;
+    count = quad_e(a, b, c, &x1, &x2);
+    printf("x1 = %lf  x2 = %lf\n", x1, x2);
+    printf("Number of roots: %d\n", count);
     return myfunc(2);
 }
