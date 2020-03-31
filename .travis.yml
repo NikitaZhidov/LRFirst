@@ -8,6 +8,7 @@ addons:
   sonarcloud:
     organization: "nikitazhidov"
 
+
 script:
   - qmake
   - make
