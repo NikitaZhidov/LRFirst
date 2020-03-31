@@ -17,7 +17,8 @@ script:
   
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
-  - build-wrapper-win-x86-64.exe --out-dir  build_wrapper_output_directory build-wrapper-win-x86-64 /t:Rebuildl
+  #- build-wrapper-win-x86-64.exe --out-dir  build_wrapper_output_directory build-wrapper-win-x86-64 /t:Rebuildl
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
   - sonar-scanner 
 
 
