@@ -9,8 +9,6 @@ before_install:
 addons:
   sonarcloud:
     organization: "nikitazhidov" # the key of the org you chose at step #3
-    token:
-        secure: e6cd034f402c0f71d0b06ae5841d6a71c41f25cc
 
 script:
   - qmake
