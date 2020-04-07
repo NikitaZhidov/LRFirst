@@ -8,11 +8,20 @@ int main()
     printf("Hello World!\n");
     double a, b, c;
     printf("Enter a: ");
-    scanf("%lf", &a);
+    if (scanf("%lf", &a) > 0)
+        ;
+    else
+        printf("You didn't enter any number");
     printf("Enter b: ");
-    scanf("%lf", &b);
+    if (scanf("%lf", &b) > 0)
+        ;
+    else
+        printf("You didn't enter any number");
     printf("Enter c: ");
-    scanf("%lf", &c);
+    if (scanf("%lf", &c) > 0)
+        ;
+    else
+        printf("You didn't enter any number");
     double x1;
     double x2;
     int count;
