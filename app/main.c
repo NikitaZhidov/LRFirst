@@ -8,11 +8,11 @@ int main()
     printf("Hello World!\n");
     double a, b, c;
     printf("Enter a: ");
-    (void)scanf("%lf", &a);
+    scanf("%lf", &a);
     printf("Enter b: ");
-    (void)scanf("%lf", &b);
+    scanf("%lf", &b);
     printf("Enter c: ");
-    (void)scanf("%lf", &c);
+    scanf("%lf", &c);
     double x1;
     double x2;
     int count;
